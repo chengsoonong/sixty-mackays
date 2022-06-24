@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "notebook/mackay.html",
+    "href": "notebook/mackay.html",
+    "title": "What is one Mackay?",
+    "section": "",
+    "text": "Sir David Mackay proposed that 40W=1kWh/d is a nice human sized unit in his groundbreaking book “Without Hot Air”. We propose to name a new unit in Sir David’s honour, called the Mackay, 1 Mackay = 1 kWh/d. The 2000W society argues that 2kW is an equitable amount of power for society. This implies that we should be targetting about 50 Mackays person. However, for personal planning purposes, 60 Mackays (=2.3kW) is a more practical number because 60 can be divided in many ways.\nTherefore 60 Mackays is a useful way to think about household power use.\n\n\nCode\nfrom barril.units import Scalar\n\n\nx2 = Scalar(1, \"kW.h\")\nt1 = Scalar(1, \"d\")\nprint(x2/t1)\n\n\n1 [kW.h/d]\n\n\n\n\nCode\nseconds_per_day = Scalar(60*60*24, \"s\")\njoules_per_kwh = 60*60*1000\nprint(f'There are {seconds_per_day} seconds per day')\nprint(f'There is {40*seconds_per_day} Joules if we use 40 Watts for a whole day')\nprint(f'There is {joules_per_kwh} Joules in one kilowatt hour (kWh)')\n\n\nThere are 86400 [s] seconds per day\nThere is 3.456e+06 [s] Joules if we use 40 Watts for a whole day\nThere is 3600000 Joules in one kilowatt hour (kWh)\n\n\n\n\nCode\nforty_watts = Scalar(40, \"W\")\nprint(f'{forty_watts} Watts is the same as {forty_watts*seconds_per_day/joules_per_kwh} kWh/d.')\n\nmackay = Scalar(0.96*40, \"W\")\nprint(f'Therefore we define 1 Mackay = 1 kWh/d = {mackay} Watts.')\n\n\n40 [W] Watts is the same as 0.96 [W.s] kWh/d.\nTherefore we define 1 Mackay = 1 kWh/d = 38.4 [W] Watts.\n\n\n\n\nCode\npower_budget = 60\nenergy_per_day_budget = power_budget*mackay*seconds_per_day\nprint(f'Therefore using {power_budget} Mackays for the whole day is {energy_per_day_budget} Joules.')\nprint(f'This is the same as using {energy_per_day_budget/seconds_per_day} Watts all day long.')\n\n\nTherefore using 60 Mackays for the whole day is 1.99066e+08 [W.s] Joules.\nThis is the same as using 2304 [W] Watts all day long."
+  },
+  {
+    "objectID": "sixty-mackays.html",
+    "href": "sixty-mackays.html",
+    "title": "sixty-mackays",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "notes.html",
+    "href": "notes.html",
+    "title": "",
+    "section": "",
+    "text": "Building on these: - https://quarto.org/docs/get-started/hello/jupyter.html - https://barril.readthedocs.io/en/latest/index.html"
+  }
+]
